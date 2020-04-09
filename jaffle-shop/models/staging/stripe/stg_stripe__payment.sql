@@ -1,6 +1,14 @@
-select  id as payment_id,
+with source_payments as (
+    select * from {{ source('stripe', 'payment') }}
+),
+renamed_payments as (
+    select
+        id as payment_id,
         "orderID" as order_id,
         "paymentMethod" as payment_method,
-        amount /100.00 as amount,
-        created
-from {{source('stripe', 'payment')}}
+        -- amount is stored in cents, convert it to dollars
+        amount / 100 as amount,
+        created as created_at
+    from source_payments
+)
+select * from renamed_payments
