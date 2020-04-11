@@ -6,5 +6,9 @@ event_charges as (
 ), 
 event_refunds as (
     select * from {{ref('stg_events__refunds')}}
-) select * from event_orders
+) 
+select * 
+from event_orders left join event_charges 
+using (charge_id)
+
 
