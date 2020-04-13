@@ -4,6 +4,6 @@ with fake_data as (
 select {{- epoch_to_timestamp(
     column_name='time_in_epoch',
     time_unit='milliseconds'
-)
+) 
 -}}
 from fake_data

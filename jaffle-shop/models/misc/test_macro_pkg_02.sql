@@ -1,1 +1,1 @@
-select {{ dbt_utils.current_timestamp() }}
+select {{ dbt_utils.current_timestamp() }} as current_ts
