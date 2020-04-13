@@ -1,0 +1,1 @@
+select {{ dbt_utils.current_timestamp() }}

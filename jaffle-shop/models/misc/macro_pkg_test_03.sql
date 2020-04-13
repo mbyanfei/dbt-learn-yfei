@@ -1,0 +1,1 @@
+select {{- dbt_utils.dateadd(datepart='day', interval=1, from_date_or_timestamp="'2020-04-12'") -}}
