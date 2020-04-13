@@ -5,5 +5,5 @@ select {{- epoch_to_timestamp(
     column_name='time_in_epoch',
     time_unit='milliseconds'
 ) 
--}}
+-}} as epoch_2_ts
 from fake_data

@@ -1,1 +1,1 @@
-select {{ hoyquiero(flavor = 'chocolate') }} 
+select {{ hoyquiero(flavor = 'chocolate') }}  as i_like
